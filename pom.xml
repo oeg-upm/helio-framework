@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>oeg.helio.framework</groupId>
+  <artifactId>helio-framework</artifactId>
+  <version>0.1.0</version>
+  <name>Helio Framework</name>
+  <description>Helio framework description</description>
+  
+  
+  <dependencies>
+  	<!-- Jena basic libraries (all in one): https://mvnrepository.com/artifact/org.apache.jena/apache-jena-libs -->
+     	<dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>apache-jena-libs</artifactId>
+            <version>3.6.0</version>
+            <type>pom</type>
+        </dependency>
+     <!--  -->
+  </dependencies>
+</project>
