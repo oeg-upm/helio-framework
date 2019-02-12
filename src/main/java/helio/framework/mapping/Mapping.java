@@ -21,7 +21,7 @@ public class Mapping{
 		datasources = new CopyOnWriteArrayList<>();
 	}
 
-	public List<Object> getResourceRulesByDatasourceId(String datasourceId){
+	public List<ResourceRule> getResourceRulesByDatasourceId(String datasourceId){
 		return this.getResourceRules()
 				 .parallelStream()
 				 .filter(resourceRule -> resourceRule.getDatasourcesId().contains(datasourceId))
