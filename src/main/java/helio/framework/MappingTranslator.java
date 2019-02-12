@@ -1,7 +1,7 @@
 package helio.framework;
 
 import helio.framework.exceptions.MalformedMappingException;
-import helio.framework.objects.HelioMapping;
+import helio.framework.mapping.Mapping;
 
 /**
  * MappingTranslator is meant to create {@link Mapping} objects using different mapping specifications or formats
@@ -17,5 +17,5 @@ public interface MappingTranslator {
 	 * @return A {@link Mapping} initialized with the input plain representation
 	 * @throws MalformedMappingException
 	 */
-	public HelioMapping translate(String value) throws MalformedMappingException;
+	public Mapping translate(String value) throws MalformedMappingException;
 }

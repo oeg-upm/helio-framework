@@ -1,6 +1,6 @@
 package helio.framework;
 
-import helio.framework.objects.HelioResourceRule;
+import helio.framework.mapping.ResourceRule;
 import helio.framework.objects.RDF;
 
 /**
@@ -16,6 +16,6 @@ public interface Virtualizer {
 	 * This method output the result of transforming into {@link RDF} the data of a provider
 	 * @return All the virtualized {@link RDF}
 	 */
-	public RDF getVirtualRDF(HelioResourceRule resourceRule, Datasource datasource, Evaluator evaluator, String dataFragment);
+	public RDF getVirtualRDF(ResourceRule resourceRule, Datasource datasource, Evaluator evaluator, String dataFragment);
 	
 }
