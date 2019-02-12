@@ -5,10 +5,9 @@
   <version>0.1.0</version>
   <name>Helio Framework</name>
   <description>Helio framework description</description>
-  
+  <url>https://github.com/oeg-upm/helio-framework</url>
   
   <properties>
-	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	    <maven.compiler.target>1.8</maven.compiler.target>
 	    	<maven.compiler.source>1.8</maven.compiler.source>    
   </properties>
@@ -29,4 +28,5 @@
 		    <version>2.12.4</version>
 		</dependency>
   </dependencies>
+
 </project>
