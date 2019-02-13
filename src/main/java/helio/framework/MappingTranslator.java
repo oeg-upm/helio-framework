@@ -13,9 +13,16 @@ public interface MappingTranslator {
 
 	/**
 	 * This method receives a plain representation of a mapping, for instance a JSON document, and returns a {@link Mapping}
-	 * @param value A plain representation of the mapping
+	 * @param mappingContent A plain representation of the mapping
 	 * @return A {@link Mapping} initialized with the input plain representation
 	 * @throws MalformedMappingException
 	 */
-	public Mapping translate(String value) throws MalformedMappingException;
+	public Mapping translate(String mappingContent) throws MalformedMappingException;
+	
+	/**
+	 * This method receives a plan representation of a mapping and returns a boolean value whether such mapping is compatible with the translator
+	 * @param mappingContent A plain representation of the mapping
+	 * @return A boolean value specifiying if the mapping is compatible with the translator, i.e., it can be processed
+	 */
+	public Boolean isCompatible(String mappingContent);
 }
