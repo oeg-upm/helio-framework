@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>oeg.helio.framework</groupId>
   <artifactId>helio-framework</artifactId>
-  <version>0.2.0</version>
+  <version>0.2.1</version>
   <name>Helio Framework</name>
   <description>Helio framework description</description>
   <url>https://github.com/oeg-upm/helio-framework</url>
@@ -28,6 +28,12 @@
 		    <groupId>com.googlecode.cqengine</groupId>
 		    <artifactId>cqengine</artifactId>
 		    <version>2.12.4</version>
+		</dependency>
+		<!-- Shapes: https://github.com/TopQuadrant/shacl -->
+		<dependency>
+		  <groupId>org.topbraid</groupId>
+		  <artifactId>shacl</artifactId>
+		  <version>1.0.1</version>
 		</dependency>
 		
   </dependencies>

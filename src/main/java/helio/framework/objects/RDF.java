@@ -21,6 +21,7 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
+import org.topbraid.shacl.validation.ValidationUtil;
 
 import com.googlecode.cqengine.persistence.support.serialization.PersistenceConfig;
 
@@ -184,5 +185,14 @@ public class RDF{
 		}
 	}
 
+	
+	public RDF validateShape(String shapeContent) {
+		RDF shape = new RDF();
+		shape.parseRDF(shapeContent);
+		Resource reportModel = ValidationUtil.validateModel(this.model, shape.getRDF(),false);
+		RDF report = new RDF();
+		report.getRDF().add(reportModel.getModel());
+		return report;
+	}
 	
 }
