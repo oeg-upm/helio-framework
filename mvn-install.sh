@@ -1,5 +1,5 @@
 # 1. Install the helio-framework dependency in your local repository using this script
-mvn clean package -DskipTests
+mvn clean install -DskipTests
 mvn install:install-file -Dfile=./target/helio-framework-0.2.1.jar -DgroupId=oeg.helio.framework -DartifactId=helio-framework -Dversion=0.2.1 -Dpackaging=jar
 
 # 2. In the pom of your project import the follwing dependencies

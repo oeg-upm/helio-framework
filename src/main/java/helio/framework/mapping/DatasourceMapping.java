@@ -2,8 +2,8 @@ package helio.framework.mapping;
 
 import com.googlecode.cqengine.attribute.SimpleAttribute;
 import com.googlecode.cqengine.query.option.QueryOptions;
-
 import helio.framework.Datasource;
+
 
 
 public class DatasourceMapping {
@@ -58,9 +58,10 @@ public class DatasourceMapping {
 	public void setRefreshTime(Long refreshTime) {
 		this.refreshTime = refreshTime;
 	}
-	
+		
+
 	// -- Other Methods
-	
+
 	public Boolean hasScheduledRefresh() {
 		return this.getRefreshTime()>0;
 	}

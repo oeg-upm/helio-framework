@@ -17,4 +17,5 @@ public interface Connector {
 	 */
 	public String retrieveData() throws NotReachableEndpointException;
 
+
 }
