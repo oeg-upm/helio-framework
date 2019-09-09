@@ -143,10 +143,30 @@ public class RDF{
 	}
 	
 
+	/**
+	 * This method parses and includes in its {@link RDF} object a {@link String} representation of RDF expressed in turtle
+	 * @param strRDF a {@link String} representation of RDF expressed in turtle
+	 */
 	public void parseRDF(String strRDF) {
 		 Model parsedModel = ModelFactory.createDefaultModel();
 		 InputStream is = new ByteArrayInputStream( strRDF.getBytes() );
-		 parsedModel.read(is, null, "TURTLE"); // this is turtle because all RDF read by the RDFDatasource is by convenion always returned in TURTLE
+		 parsedModel.read(is, null, "TURTLE"); 
+		if(this.model!=null) {
+			addModel(parsedModel);
+		}else {
+			this.model = parsedModel;
+		}
+	}
+	
+	/**
+	 * This method parses and includes in its {@link RDF} object a {@link String} representation of RDF expressed in a given format
+	 * @param strRDF a {@link String} representation of RDF
+	 * @param strRDF a {@link String} representation of an RDF format, it could be any of: Turtle, RDF/XML, N-Triples, JSON-LD, RDF/JSON, TriG, N-Quads, TriX
+	 */
+	public void parseRDF(String strRDF, String format) {
+		 Model parsedModel = ModelFactory.createDefaultModel();
+		 InputStream is = new ByteArrayInputStream( strRDF.getBytes() );
+		 parsedModel.read(is, null, format); 
 		if(this.model!=null) {
 			addModel(parsedModel);
 		}else {
