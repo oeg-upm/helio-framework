@@ -1,5 +1,7 @@
 package helio.framework;
 
+import java.util.List;
+
 /**
  * Evaluator allows to evaluate expressions, a composite of functions that can return a {@link String} value as result or a {@link Boolean} value (a predicate expression).
  * 
@@ -13,7 +15,7 @@ public interface Evaluator {
 	 * @param expression A {@link String} expression
 	 * @return The {@link String} value obtained as result of evaluating the input expression
 	 */
-	String evaluateExpresion(String expression);
+	List<String> evaluateExpresions(String expression);
 
 	/**
 	 * This method evaluates a predicate expression that returns a {@link Boolean} as output
