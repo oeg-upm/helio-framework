@@ -1,5 +1,7 @@
 package helio.framework;
 
+import org.apache.jena.sparql.resultset.ResultsFormat;
+
 import helio.framework.exceptions.ResourceNotFoundException;
 import helio.framework.objects.RDF;
 import helio.framework.objects.SparqlResultsFormat;

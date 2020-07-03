@@ -31,4 +31,6 @@ public interface Datasource {
 	 * @throws LiteralNotFounException
 	 */
 	public List<String> accessData(String data, String filter) throws LiteralNotFounException;
+	
+	public void setConnector(Connector connector);
 }

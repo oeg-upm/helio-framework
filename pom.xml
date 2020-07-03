@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>oeg.helio.framework</groupId>
   <artifactId>helio-framework</artifactId>
-  <version>0.2.3</version>
+  <version>0.2.4</version>
   <name>Helio Framework</name>
   <description>Helio framework description</description>
   <url>https://github.com/oeg-upm/helio-framework</url>

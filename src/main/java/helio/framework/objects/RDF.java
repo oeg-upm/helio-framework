@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+
 import org.apache.jena.datatypes.BaseDatatype;
 import org.apache.jena.datatypes.RDFDatatype;
 import org.apache.jena.rdf.model.Literal;
@@ -24,8 +25,6 @@ import org.apache.jena.rdf.model.StmtIterator;
 import org.topbraid.shacl.validation.ValidationUtil;
 
 import com.googlecode.cqengine.persistence.support.serialization.PersistenceConfig;
-
-import helio.framework.objects.RDF;
 
 @PersistenceConfig(polymorphic = true)
 public class RDF{
@@ -124,6 +123,7 @@ public class RDF{
 	}
 	
 	
+	@Override
 	public String toString() {
 		Writer output = new StringWriter();
 		model.write(output, "TURTLE");
