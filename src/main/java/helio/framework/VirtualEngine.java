@@ -24,21 +24,15 @@ public interface VirtualEngine {
 	 * @return All the {@link RDF} data of such resource
 	 * @throws ResourceNotFoundException
 	 */
-	public RDF getResource(String iri) throws ResourceNotFoundException;
+	public String getResource(String iri) throws ResourceNotFoundException;
 	
 	/**
 	 * This method returns all the {@link RDF} translated from the data of a provider
 	 * @return All the {@link RDF}
 	 */
-	public RDF publishRDF();
+	public String publishRDF();
 	
-	/**
-	 * This method returns a {@link JSONArray} containing several {@link JSONObject} each of which is a solution to the input query
-	 * @param sparqlQuery A SPARQL query
-	 * @return A {@link JSONArray} containing all the query solutions found
-	 */
-	public String query(String sparqlQuery);
-	
+
 	/**
 	 * This method returns a {@link JSONArray} containing several {@link JSONObject} each of which is a solution to the input query
 	 * @param sparqlQuery A SPARQL query

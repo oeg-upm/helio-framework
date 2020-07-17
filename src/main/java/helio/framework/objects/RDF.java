@@ -30,7 +30,7 @@ import com.googlecode.cqengine.persistence.support.serialization.PersistenceConf
 public class RDF{
 
 	private Model model;
-	
+
 	/**
 	 * Constructor of this class<p>
 	 * @dataAddress iri A file directory or a URL exposing RDF

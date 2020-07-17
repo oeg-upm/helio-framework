@@ -1,39 +1,39 @@
-package helio.framework.mapping;
+package helio.framework.materialiser.mappings;
 
-public class PropertyRule{
+public class Rule{
 	
 	// -- Attributes
 	
-	protected String object; // mandatory
-	protected String predicate; // mandatory
+	protected EvaluableExpression object; // mandatory
+	protected EvaluableExpression predicate; // mandatory
 	protected Boolean isLiteral; // mandatory
 	protected String dataType; // optional; disjoint with language
 	protected String language; // optional; disjoint with language
 
 	// -- Constructor
 	
-	public PropertyRule() {
+	public Rule() {
 		super();
 	}
 
 	// -- Getters and Setters
 
-	public String getObject() {
+	public EvaluableExpression getObject() {
 		return object;
 	}
 
 
-	public void setObject(String expression) {
+	public void setObject(EvaluableExpression expression) {
 		this.object = expression;
 	}
 
 
-	public String getPredicate() {
+	public EvaluableExpression getPredicate() {
 		return predicate;
 	}
 
 
-	public void setPredicate(String predicate) {
+	public void setPredicate(EvaluableExpression predicate) {
 		this.predicate = predicate;
 	}
 
@@ -89,7 +89,7 @@ public class PropertyRule{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PropertyRule other = (PropertyRule) obj;
+		Rule other = (Rule) obj;
 		if (dataType == null) {
 			if (other.dataType != null)
 				return false;
