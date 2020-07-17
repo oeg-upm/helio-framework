@@ -1,7 +1,6 @@
 package helio.framework.materialiser;
 
 import helio.framework.exceptions.MalformedMappingException;
-import helio.framework.mapping.Mapping;
 import helio.framework.materialiser.mappings.HelioMaterialiserMapping;
 
 /**

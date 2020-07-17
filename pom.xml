@@ -22,12 +22,7 @@
             <version>3.6.0</version>
             <type>pom</type>
         </dependency>
-    <!-- CQEngine -->
-		<dependency>
-		    <groupId>com.googlecode.cqengine</groupId>
-		    <artifactId>cqengine</artifactId>
-		    <version>2.12.4</version>
-		</dependency>
+   
 		<!-- Shapes: https://github.com/TopQuadrant/shacl -->
 		<dependency>
 		  <groupId>org.topbraid</groupId>
@@ -42,7 +37,7 @@
 	    <version>3.3.0-M1</version>
 	</dependency>
 
-	<!-- Logging -->
+	<!-- Logging 
 	<dependency>
 	    <groupId>org.apache.logging.log4j</groupId>
 	    <artifactId>log4j-api</artifactId>
@@ -52,7 +47,7 @@
 	    <groupId>org.apache.logging.log4j</groupId>
 	    <artifactId>log4j-core</artifactId>
 	    <version>2.13.0</version>
-	</dependency>
+	</dependency>-->
 	
   </dependencies>
 

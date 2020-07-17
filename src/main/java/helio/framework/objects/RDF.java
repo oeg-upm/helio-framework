@@ -24,9 +24,7 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.topbraid.shacl.validation.ValidationUtil;
 
-import com.googlecode.cqengine.persistence.support.serialization.PersistenceConfig;
 
-@PersistenceConfig(polymorphic = true)
 public class RDF{
 
 	private Model model;
