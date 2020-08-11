@@ -65,6 +65,14 @@ public class DataSource {
 
 	// -- Ancillary
 	
+	
+	@Override
+	public String toString() {
+		return "DataSource (id=" + id + ", dataHandler=" + dataHandler + ", dataProvider=" + dataProvider + ", refresh="
+				+ refresh + ")";
+	}
+
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -75,6 +83,7 @@ public class DataSource {
 		result = prime * result + ((refresh == null) ? 0 : refresh.hashCode());
 		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {

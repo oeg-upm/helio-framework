@@ -28,5 +28,5 @@ public interface MaterialiserCache {
 
 	void deleteGraphs();
 	
-	void changeSailRepository(Repository repository);
+	void changeRepository(Repository repository);
 }

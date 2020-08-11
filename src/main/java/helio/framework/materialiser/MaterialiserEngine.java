@@ -30,7 +30,7 @@ public interface MaterialiserEngine {
 	 * This method returns all the {@link RDF} translated from the data of a provider
 	 * @return All the {@link RDF}
 	 */
-	public String publishRDF(RDFFormat format);
+	public String getRDF(RDFFormat format);
 	
 
 	/**
@@ -55,7 +55,7 @@ public interface MaterialiserEngine {
 	 * This method returns all the {@link RDF} translated from the data of a provider
 	 * @return All the {@link RDF}
 	 */
-	public PipedInputStream publishStreamRDF(RDFFormat format);
+	public PipedInputStream getStreamRDF(RDFFormat format);
 	
 
 	/**
