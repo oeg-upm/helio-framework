@@ -1,10 +1,10 @@
 package helio.orchestrator;
 
-import helio.framework.objects.RDF;
+import org.eclipse.rdf4j.model.Model;
 
 public interface HelioRepository {
 
-	public void updateGraph(String graphURL, RDF data);
+	public void updateGraph(String graphURL, Model data);
 	public String getGraph(String graphURL, String format);
 	public String getGraph(String format);
 	public void clearGraph(String graphURL);
