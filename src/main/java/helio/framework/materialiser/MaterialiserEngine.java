@@ -1,6 +1,8 @@
 package helio.framework.materialiser;
 
 import java.io.PipedInputStream;
+
+import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import helio.framework.exceptions.ResourceNotFoundException;
 import helio.framework.objects.SparqlResultsFormat;
@@ -21,13 +23,13 @@ public interface MaterialiserEngine {
 	 * @return All the {@link RDF} data of such resource
 	 * @throws ResourceNotFoundException
 	 */
-	public String getResource(String iri, RDFFormat format) throws ResourceNotFoundException;
+	public Model getResource(String iri, RDFFormat format) throws ResourceNotFoundException;
 	
 	/**
 	 * This method returns all the {@link RDF} translated from the data of a provider
 	 * @return All the {@link RDF}
 	 */
-	public String getRDF(RDFFormat format);
+	public Model getRDF(RDFFormat format);
 	
 
 	/**
@@ -39,22 +41,6 @@ public interface MaterialiserEngine {
 	public String query(String sparqlQuery, SparqlResultsFormat format);
 	
 	
-	
-	/**
-	 * This method retrieves the {@link RDF} of the provided IRI
-	 * @param iri An IRI that identifies a specific resource
-	 * @return All the {@link RDF} data of such resource
-	 * @throws ResourceNotFoundException
-	 */
-	public PipedInputStream getStreamResource(String iri, RDFFormat format) throws ResourceNotFoundException;
-	
-	/**
-	 * This method returns all the {@link RDF} translated from the data of a provider
-	 * @return All the {@link RDF}
-	 */
-	public PipedInputStream getStreamRDF(RDFFormat format);
-	
-
 	/**
 	 * This method returns a {@link JSONArray} containing several {@link JSONObject} each of which is a solution to the input query
 	 * @param sparqlQuery A SPARQL query
