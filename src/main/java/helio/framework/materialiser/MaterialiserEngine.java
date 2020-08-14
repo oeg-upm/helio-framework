@@ -1,16 +1,15 @@
 package helio.framework.materialiser;
 
-import java.io.PipedInputStream;
-
+import java.io.InputStream;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import helio.framework.exceptions.ResourceNotFoundException;
 import helio.framework.objects.SparqlResultsFormat;
 
 /**
- * MaterialiserEngine is meant to translate the data from a  set of data provider into RDF, or providing access to existing resources or allowing to perform SPARQL queries.
+ * MaterialiserEngine is meant to translate the data from a set of data sources into RDF, providing access to generated resources, or allowing to perform SPARQL queries.
  * <p>
- * In addition to deal with large RDF data sets, the MaterialiserEngine provides {@link PipedInputStream} for consuming the RDF data
+ * In addition to deal with large RDF data sets, the MaterialiserEngine provides {@link InputStream} for consuming the query answer
  * 
  * @author Andrea Cimmino
  *
@@ -18,43 +17,48 @@ import helio.framework.objects.SparqlResultsFormat;
 public interface MaterialiserEngine {
 
 	/**
-	 * This method retrieves the {@link RDF} of the provided IRI
-	 * @param iri An IRI that identifies a specific resource
-	 * @return All the {@link RDF} data of such resource
-	 * @throws ResourceNotFoundException
+	 * This method returns all the triples of the last updated RDF which subject is the one provided
+	 * @param iri an IRI that identifies a specific resource, i.e., the subject
+	 * @param format the {@link RDFFormat} in which the output will be displayed
+	 * @return a {@link Model} containing the relevant triples
+	 * @throws ResourceNotFoundException is thrown when the requested IRI was not found
 	 */
 	public Model getResource(String iri, RDFFormat format) throws ResourceNotFoundException;
 	
 	/**
-	 * This method returns all the {@link RDF} translated from the data of a provider
-	 * @return All the {@link RDF}
+	 * This method returns all the triples of the last updated RDF 
+	 * @param format the {@link RDFFormat} in which the output will be displayed
+	 * @return a {@link Model} containing the relevant triples
 	 */
 	public Model getRDF(RDFFormat format);
 	
 
 	/**
-	 * This method returns a {@link JSONArray} containing several {@link JSONObject} each of which is a solution to the input query
-	 * @param sparqlQuery A SPARQL query
-	 * @param SparqlAnswerFormat specifies the format in which the query answer will be expressed. To know more about the the possible values check {@link ResultsFormat}
-	 * @return A {@link JSONArray} containing all the query solutions found
+	 * This method solves the provided SPARQL over the last updated RDF
+	 * @param sparqlQuery a valid SPARQL query (SELECT, ASK, DESCRIBE, or CONSTRUCT)
+	 * @param format specifies a {@link SparqlResultsFormat} format in which the query answer will be expressed
+	 * @return a {@link String} containing the query answers
 	 */
 	public String query(String sparqlQuery, SparqlResultsFormat format);
 	
 	
 	/**
-	 * This method returns a {@link JSONArray} containing several {@link JSONObject} each of which is a solution to the input query
-	 * @param sparqlQuery A SPARQL query
-	 * @param SparqlAnswerFormat specifies the format in which the query answer will be expressed. To know more about the the possible values check {@link ResultsFormat}
-	 * @return A {@link JSONArray} containing all the query solutions found
+	 * This method solves the provided SPARQL over the last updated RDF
+	 * @param sparqlQuery a valid SPARQL query (SELECT, ASK, DESCRIBE, or CONSTRUCT)
+	 * @param format specifies a {@link SparqlResultsFormat} format in which the query answer will be expressed
+	 * @return a {@link InputStream} containing the query answers
 	 */
-	public PipedInputStream queryStream(String sparqlQuery, SparqlResultsFormat format);
+	public InputStream queryStream(String sparqlQuery, SparqlResultsFormat format);
 	
 	
 	/**
-	 * This method updates the RDF translated from those sources configured as synchronous. If using a persistent triplestore this method updates its content without performing any operation over the produced RDF
+	 * This method updates the RDF of all the synchronous {@link helio.framework.materialiser.mappings.DataSource}, if the internal cache is an external triple store the updated triples will be injected in such store
 	 */
 	public void updateSynchronousSources();
 	
 	
+	/**
+	 * This method closes all the background processes of Helio, for instance, the processes that generate the RDF of asynchronous {@link helio.framework.materialiser.mappings.DataSource}
+	 */
 	public void close();
 }
