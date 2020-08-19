@@ -1,5 +1,11 @@
 package helio.framework.materialiser.mappings;
 
+/**
+ * This class represents a source of data, which consist in a {@link DataProvider} that retrieves data from the source and a {@link DataHandler} that filters and retrieves only the relevant information from the fetched data-<p>
+ * Additionally, a {@link DataSource} can be synchronous, and its related RDF will be generated when required by a user, or asynchronous, and its related RDF will be generated periodically as specified in the refresh attribute.
+ * @author Andrea Cimmino
+ *
+ */
 public class DataSource {
 	
 	private String id;
@@ -13,6 +19,12 @@ public class DataSource {
 		// empty
 	}
 	
+	/**
+	 * This constructor initializes a synchronous data source
+	 * @param id a unique id for the data source
+	 * @param dataHandler a {@link DataHandler} to manage the data
+	 * @param dataProvider a {@link DataProvider} to fetch the data
+	 */
 	public DataSource(String id, DataHandler dataHandler, DataProvider dataProvider) {
 		super();
 		this.id = id;
@@ -21,6 +33,13 @@ public class DataSource {
 		this.refresh = null;
 	}
 	
+	/**
+	 * This constructor initializes a asynchronous data source
+	 * @param id a unique id for the data source
+	 * @param dataHandler a {@link DataHandler} to manage the data
+	 * @param dataProvider a {@link DataProvider} to fetch the data
+	 * @param refresh a quantum of time in milliseconds, the data related to this data source will be generated periodically each refresh time provided and injected in the cache
+	 */
 	public DataSource(String id, DataHandler dataHandler, DataProvider dataProvider, Integer refresh) {
 		super();
 		this.id = id;
@@ -62,7 +81,8 @@ public class DataSource {
 	public void setRefresh(Integer refresh) {
 		this.refresh = refresh;
 	}
-
+	
+	
 	// -- Ancillary
 	
 	

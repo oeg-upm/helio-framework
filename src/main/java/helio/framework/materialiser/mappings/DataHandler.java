@@ -28,6 +28,11 @@ public interface DataHandler extends Serializable{
 	 * @return all the occurrences found in the piece of data using the filtering expression
 	 */
 	public List<String> filter(String filter, String dataChunk); 
+	
+	/**
+	 * This method is expected to receive a {@link JsonObject} with the necessary information to setup an implementation of this interface.<p> Check the documentation of the implementations to know more about the different configurations required by those implementations.
+	 * @param configuration a suitable configuration
+	 */
 	public void configure(JsonObject configuration);
 
 }

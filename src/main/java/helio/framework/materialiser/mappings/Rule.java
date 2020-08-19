@@ -1,5 +1,10 @@
 package helio.framework.materialiser.mappings;
 
+/**
+ * This object represents a rule that generates from heterogeneous data an RDF triple
+ * @author Andrea Cimmino
+ *
+ */
 public class Rule{
 	
 	// -- Attributes

@@ -1,7 +1,11 @@
 package helio.framework.objects;
 
 
-
+/**
+ * This object codifies all the formats in which a SPARQL query can return the query answer
+ * @author Andrea Cimmino
+ *
+ */
 public enum SparqlResultsFormat {
 	
 	// -- RDF formats

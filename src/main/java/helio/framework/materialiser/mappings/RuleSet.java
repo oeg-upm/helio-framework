@@ -5,7 +5,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
+/**
+ * This object represents a group of {@link Rule} to generate a piece of RDF
+ * @author Andrea Cimmino
+ *
+ */
 public class RuleSet {
 	
 	// -- Attributes
