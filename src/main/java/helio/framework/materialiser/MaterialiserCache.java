@@ -9,7 +9,7 @@ import org.eclipse.rdf4j.rio.RDFFormat;
 import helio.framework.objects.SparqlResultsFormat;
 
 /**
- * The MaterialiserCache is meant to be implemented by classes that allow the {@link MaterialiserEngine} to store copies of the generated RDF.<p>
+ * The MaterialiserCache is meant to be implemented by classes that allow the {@link helio.framework.materialiser.MaterialiserEngine} to store copies of the generated RDF.<p>
  *
  * @author Andrea Cimmino
  *
@@ -27,7 +27,7 @@ public interface MaterialiserCache {
 	/**
 	 * This method adds an RDF graph in the cache
 	 * @param namedGraph the name of the graph
-	 * @param rdf the piece of RDF to be stored
+	 * @param inputDataStream the piece of RDF to be stored
 	 * @param format the format of the provided piece of RDF
 	 */
 	void addGraph(String namedGraph, InputStream inputDataStream, RDFFormat format);
