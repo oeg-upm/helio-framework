@@ -2,7 +2,6 @@ package helio.framework.materialiser;
 
 import java.io.InputStream;
 import org.eclipse.rdf4j.model.Model;
-import org.eclipse.rdf4j.rio.RDFFormat;
 import helio.framework.exceptions.ResourceNotFoundException;
 import helio.framework.objects.SparqlResultsFormat;
 
@@ -19,18 +18,16 @@ public interface MaterialiserEngine {
 	/**
 	 * This method returns all the triples of the last updated RDF which subject is the one provided
 	 * @param iri an IRI that identifies a specific resource, i.e., the subject
-	 * @param format the {@link RDFFormat} in which the output will be displayed
 	 * @return a {@link Model} containing the relevant triples
 	 * @throws ResourceNotFoundException is thrown when the requested IRI was not found
 	 */
-	public Model getResource(String iri, RDFFormat format) throws ResourceNotFoundException;
+	public Model getResource(String iri) throws ResourceNotFoundException;
 	
 	/**
 	 * This method returns all the triples of the last updated RDF 
-	 * @param format the {@link RDFFormat} in which the output will be displayed
 	 * @return a {@link Model} containing the relevant triples
 	 */
-	public Model getRDF(RDFFormat format);
+	public Model getRDF();
 	
 
 	/**
