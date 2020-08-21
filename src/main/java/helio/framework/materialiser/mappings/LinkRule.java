@@ -11,7 +11,9 @@ public class LinkRule {
 	private String sourceNamedGraph;
 	private String targetNamedGraph;
 	private EvaluableExpression expression;
-
+	private String predicate;
+	private String inversePredicate;
+	
 	public LinkRule() {
 		super();
 	}
@@ -37,13 +39,38 @@ public class LinkRule {
 		this.expression = expression;
 	}
 
+	public String getPredicate() {
+		return predicate;
+	}
+
+	public void setPredicate(String predicate) {
+		this.predicate = predicate;
+	}
+
+	public String getInversePredicate() {
+		return inversePredicate;
+	}
+
+	public void setInversePredicate(String inversePredicate) {
+		this.inversePredicate = inversePredicate;
+	}
+
 	// Ancillary methods
 	
+	@Override
+	public String toString() {
+		return "LinkRule [sourceNamedGraph=" + sourceNamedGraph + ", targetNamedGraph=" + targetNamedGraph
+				+ ", expression=" + expression + ", predicate=" + predicate + ", inversePredicate=" + inversePredicate
+				+ "]";
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((expression == null) ? 0 : expression.hashCode());
+		result = prime * result + ((inversePredicate == null) ? 0 : inversePredicate.hashCode());
+		result = prime * result + ((predicate == null) ? 0 : predicate.hashCode());
 		result = prime * result + ((sourceNamedGraph == null) ? 0 : sourceNamedGraph.hashCode());
 		result = prime * result + ((targetNamedGraph == null) ? 0 : targetNamedGraph.hashCode());
 		return result;
@@ -63,6 +90,16 @@ public class LinkRule {
 				return false;
 		} else if (!expression.equals(other.expression))
 			return false;
+		if (inversePredicate == null) {
+			if (other.inversePredicate != null)
+				return false;
+		} else if (!inversePredicate.equals(other.inversePredicate))
+			return false;
+		if (predicate == null) {
+			if (other.predicate != null)
+				return false;
+		} else if (!predicate.equals(other.predicate))
+			return false;
 		if (sourceNamedGraph == null) {
 			if (other.sourceNamedGraph != null)
 				return false;
@@ -76,12 +113,9 @@ public class LinkRule {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "LinkRule [sourceNamedGraph=" + sourceNamedGraph + ", targetNamedGraph=" + targetNamedGraph
-				+ ", expression=" + expression + "]";
-	}
 	
+	
+
 	
 	
 	
