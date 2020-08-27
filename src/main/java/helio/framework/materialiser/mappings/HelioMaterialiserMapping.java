@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * This class implements the mappings required by the {@link helio.framework.materialiser.MaterialiserEngine} to generate the RDF.<p> 
  * The {@link HelioMaterialiserMapping} consist on a list of {@link DataSource}, a list of {@link RuleSet}, and a list of {@link LinkRule}.
- * @author cimmino
+ * @author Andrea Cimmino
  *
  */
 public class HelioMaterialiserMapping {

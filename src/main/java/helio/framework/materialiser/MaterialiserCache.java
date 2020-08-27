@@ -1,11 +1,7 @@
 package helio.framework.materialiser;
 
-import java.io.InputStream;
 import java.io.PipedInputStream;
-import org.eclipse.rdf4j.model.Model;
-import org.eclipse.rdf4j.repository.Repository;
-import org.eclipse.rdf4j.rio.RDFFormat;
-
+import org.apache.jena.rdf.model.Model;
 import helio.framework.objects.SparqlResultsFormat;
 
 /**
@@ -16,21 +12,8 @@ import helio.framework.objects.SparqlResultsFormat;
  */
 public interface MaterialiserCache {
 
-	/**
-	 * This method adds an RDF graph in the cache
-	 * @param namedGraph the name of the graph
-	 * @param rdf the piece of RDF to be stored
-	 * @param format the format of the provided piece of RDF
-	 */
-	void addGraph(String namedGraph, String rdf, RDFFormat format);
-
-	/**
-	 * This method adds an RDF graph in the cache
-	 * @param namedGraph the name of the graph
-	 * @param inputDataStream the piece of RDF to be stored
-	 * @param format the format of the provided piece of RDF
-	 */
-	void addGraph(String namedGraph, InputStream inputDataStream, RDFFormat format);
+	
+	void addGraph(String namedGraph, Model model);
 
 	/**
 	 * This method retrieves a named graph form the cache
@@ -70,19 +53,19 @@ public interface MaterialiserCache {
 	/**
 	 * This method solves a CONSTRUCT or DESCRIBE SPARQL query over the RDF stored in the cache
 	 * @param query a SPARQL 1.1 valid query
-	 * @param format the query answering output format
 	 * @return a stream with the query answers
 	 */
-	PipedInputStream solveGraphQuery(String query, SparqlResultsFormat format);
+	Model solveGraphQuery(String query);
 
 	/**
 	 * This method erases all the named RDF graphs within the cache
 	 */
 	void deleteGraphs();
 	
+	
 	/**
-	 * This method allows modifying the internal data handler with a different {@link Repository}
-	 * @param repository a valid {@link Repository} that will handle the data to be stored in the cache
+	 * This methods sets up, or modifies, the repository using a configuration file.
+	 * @param configuration a configuration expected by a specific {@link MaterialiserCache},  depending on the implementation the content of the variable may change
 	 */
-	void changeRepository(Repository repository);
+	void configureRepository(String configuration);
 }

@@ -1,7 +1,9 @@
 package helio.framework.materialiser;
 
 import java.io.InputStream;
-import org.eclipse.rdf4j.model.Model;
+
+import org.apache.jena.rdf.model.Model;
+
 import helio.framework.exceptions.ResourceNotFoundException;
 import helio.framework.objects.SparqlResultsFormat;
 

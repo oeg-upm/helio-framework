@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>upm.oeg.helio</groupId>
 	<artifactId>framework</artifactId>
-	<version>0.3.3</version>
+	<version>0.3.5</version>
 	<name>Helio Framework</name>
 	<description>Helio framework</description>
 	<url>https://github.com/oeg-upm/helio-framework</url>
@@ -16,7 +16,14 @@
 	</properties>
 
 	<dependencies>
-
+	
+		<!-- https://mvnrepository.com/artifact/org.apache.jena/jena-core -->
+		<dependency>
+		    <groupId>org.apache.jena</groupId>
+		    <artifactId>jena-core</artifactId>
+		    <version>3.16.0</version>
+		</dependency>
+			
 		<!-- RDF4J: repositories https://mvnrepository.com/artifact/org.eclipse.rdf4j/rdf4j-repository-sail -->
 		<dependency>
 			<groupId>org.eclipse.rdf4j</groupId>
@@ -33,14 +40,7 @@
 
 	</dependencies>
 
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub OWNER Apache Maven Packages</name>
-			<url>https://github.com/oeg-upm/Helio</url>
-		</repository>
-	</distributionManagement>
-
+	
 	<build>
 		<plugins>
 

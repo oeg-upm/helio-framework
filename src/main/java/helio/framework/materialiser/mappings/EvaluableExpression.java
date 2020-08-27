@@ -6,6 +6,10 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @author Andrea Cimmino
+ *
+ */
 public class EvaluableExpression {
 
 	// - Attributes
