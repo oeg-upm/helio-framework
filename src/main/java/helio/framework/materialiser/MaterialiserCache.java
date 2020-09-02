@@ -1,6 +1,5 @@
 package helio.framework.materialiser;
 
-import java.io.PipedInputStream;
 import org.apache.jena.rdf.model.Model;
 import helio.framework.objects.SparqlResultsFormat;
 
@@ -46,9 +45,9 @@ public interface MaterialiserCache {
 	 * This method solves a SELECT or ASK SPARQL query over the RDF stored in the cache
 	 * @param query a SPARQL 1.1 valid query
 	 * @param format the query answering output format
-	 * @return a stream with the query answers
+	 * @return a {@link String} containing the query answers
 	 */
-	PipedInputStream solveTupleQuery(String query, SparqlResultsFormat format);
+	String solveTupleQuery(String query, SparqlResultsFormat format);
 
 	/**
 	 * This method solves a CONSTRUCT or DESCRIBE SPARQL query over the RDF stored in the cache

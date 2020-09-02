@@ -42,15 +42,6 @@ public interface MaterialiserEngine {
 	
 	
 	/**
-	 * This method solves the provided SPARQL over the last updated RDF
-	 * @param sparqlQuery a valid SPARQL query (SELECT, ASK, DESCRIBE, or CONSTRUCT)
-	 * @param format specifies a {@link SparqlResultsFormat} format in which the query answer will be expressed
-	 * @return a {@link InputStream} containing the query answers
-	 */
-	public InputStream queryStream(String sparqlQuery, SparqlResultsFormat format);
-	
-	
-	/**
 	 * This method updates the RDF of all the synchronous {@link helio.framework.materialiser.mappings.DataSource}, if the internal cache is an external triple store the updated triples will be injected in such store
 	 */
 	public void updateSynchronousSources();
