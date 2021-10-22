@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import helio.framework.expressions.EvaluableExpression;
+
 /**
  * This object represents a group of {@link Rule} to generate a piece of RDF
  * @author Andrea Cimmino

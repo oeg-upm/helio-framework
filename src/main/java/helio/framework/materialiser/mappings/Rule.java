@@ -1,5 +1,9 @@
 package helio.framework.materialiser.mappings;
 
+import helio.framework.expressions.EvaluableExpression;
+import helio.framework.expressions.EvaluableExpressionException;
+import helio.framework.expressions.Expressions;
+
 /**
  * This object represents a rule that generates from heterogeneous data an RDF triple
  * @author Andrea Cimmino
@@ -12,8 +16,8 @@ public class Rule{
 	protected EvaluableExpression object; // mandatory
 	protected EvaluableExpression predicate; // mandatory
 	protected Boolean isLiteral; // mandatory
-	protected String dataType; // optional; disjoint with language
-	protected String language; // optional; disjoint with language
+	protected EvaluableExpression dataType; // optional; disjoint with language
+	protected EvaluableExpression language; // optional; disjoint with language
 
 	// -- Constructor
 	
@@ -42,12 +46,12 @@ public class Rule{
 		this.predicate = predicate;
 	}
 
-	public String getDataType() {
+	public EvaluableExpression getDataType() {
 		return dataType;
 	}
 
 
-	public void setDataType(String dataType) {
+	public void setDataType(EvaluableExpression dataType) {
 		this.dataType = dataType;
 	}
 
@@ -59,11 +63,11 @@ public class Rule{
 		this.isLiteral = isLiteral;
 	}
 	
-	public String getLanguage() {
+	public EvaluableExpression getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(String language) {
+	public void setLanguage(EvaluableExpression language) {
 		this.language = language;
 	}
 

@@ -1,5 +1,7 @@
 package helio.framework.materialiser.mappings;
 
+import helio.framework.expressions.EvaluableExpression;
+
 /**
  * This object represents a rule to link two RDF resources using a fuzzy similarity expression
  * @author Andrea Cimmino
